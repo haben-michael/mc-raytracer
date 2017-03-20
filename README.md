@@ -1,2 +1,2 @@
 # mc-raytracer
-[Final write-up](./final_report.pdf)
+[write-up](./final_report.pdf)
