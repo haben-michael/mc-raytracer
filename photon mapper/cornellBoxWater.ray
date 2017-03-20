@@ -1,0 +1,80 @@
+SBT-raytracer 1.0
+
+// cornell_box.ray
+// Just everybody's favorite scene
+
+camera
+{
+	position = (2.78, 2.73, -8.00);
+	viewdir = (0.0, 0.0, 1.0);
+	updir = (0.0, 1.0, 0.0);
+	fov = 39.3076;
+}
+
+// light
+translate( 2.78, 5.48, 2.295,
+	scale( 1.3, 1.0, 1.05,
+		rotate( 1.0, 0.0, 0.0, 1.5708,
+		square {
+			material = {
+				emissive = (200.0, 200.0, 200.0);
+			}
+	} ) ) )
+
+translate(4.031, 1, 3.88,
+	sphere {
+	material = { 
+		diffuse = (0.8, 0.7, 0.01);
+	}
+} )
+
+/*
+This sphere doesn't really add anything.
+translate(1.58, 0.485, 2.767,
+	scale( 0.5, 
+		sphere {
+		material = { 
+			diffuse = (0.9, 0.5, 0.1);
+		}
+	} ) )
+	*/
+
+polymesh {
+	material = { 
+		diffuse = (0, 0, 0);
+		transmissive = (0.4, 0.7, 0.7);
+		index = 1.33;
+	}
+	objfile = "pool.obj";
+	objgroup = "waterSurface";
+}
+
+scale( 0.01, 0.01, 0.01, 
+	{
+
+		polymesh {
+			material = { 
+				diffuse = (0.750, 0.750, 0.750); 
+			}
+			objfile = "box.obj";
+			objgroup = "IndexedFaceSet";
+		}
+
+		polymesh {
+			material = { 
+				diffuse = (0.0, 0.6, 0.0); 
+			}
+			objfile = "box.obj";
+			objgroup = "IndexedFaceSet__1";
+		}
+
+		polymesh {
+			material = { 
+				diffuse = (0.5, 0.0, 0.0); 
+			}
+			objfile = "box.obj";
+			objgroup = "IndexedFaceSet__2";
+		}
+
+	} )
+	

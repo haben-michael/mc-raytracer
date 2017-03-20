@@ -1,0 +1,9 @@
+optimizations--stratified--importance (spheres)
+sampling box
+
+
+todo
+sampling other light sources--area lights
+importance sampling--spheres
+
+pow(,4)

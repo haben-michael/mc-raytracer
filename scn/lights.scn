@@ -1,0 +1,29 @@
+# A camera looking from (0,0,50) down the negative z-axis (0,0,-1) with up in the direction (0,1,0) 
+# The xfov is 0.5, while the yfov will be computed to match the aspect ratio of the image
+# The near and far distances are 0.01 and 100, which conservatively contain the scene
+camera  0 0 50  0 0 -1  0 1 0  0.5   0.01 100
+
+# A white (1,1,1) point light in the middle of the spheres (0,0,0)
+# with no attenuation with distance
+point_light 1 1 1  0 0 0  1 0 0
+
+# A bright red (10,0,0) point light to the right of the spheres (10,0,0)
+# with linear attenuation with distance
+point_light 10 0 0  10 0 0  0 1 0
+
+# A bright blue (0,0,100) spot light to the left of the spheres (-10,0,0)
+# pointing up and right (1,1,0) with quadradic attenuation with distance
+spot_light 0 0 100  -10 0 0  1 1 0  0 0 1  1.57 1  
+
+# Material
+material 0.2 0.2 0.2  1 1 1  0.5 0.5 0.5  0 0 0  0 0 0  10 0 0
+
+# Spheres 
+sphere  0    -5 -5 -5    1
+sphere  0     5 -5 -5    1
+sphere  0    -5  5 -5    1
+sphere  0    -5 -5  5    1
+sphere  0     5  5 -5    1
+sphere  0    -5  5  5    1
+sphere  0     5 -5  5    1
+sphere  0     5  5  5    1
